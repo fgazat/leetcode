@@ -10,7 +10,7 @@ func plusOne(digits []int) []int {
 			digits[i] = 0
 		}
 	}
-    // in case if all digits were 999 we should get 1000
+	// in case if all digits were 999 we should get 1000
 	a := make([]int, n+1)
 	a[0] = 1
 	return a
