@@ -14,7 +14,7 @@ package leetcode
 
 func twoSum(nums []int, target int) []int {
 	imap := make(map[int]int)
-    // index = walked indeger, value = index of value
+	// index = walked indeger, value = index of value
 	for currI, currNum := range nums {
 		if requiredI, ok := imap[target-currNum]; ok { // checking if we already have required value
 			return []int{requiredI, currI} // then return pair of found index and cuurend
