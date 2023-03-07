@@ -5,10 +5,9 @@ import (
 	"testing"
 )
 
-func Test_twoSum(t *testing.T) {
+func Test_plusOne(t *testing.T) {
 	type args struct {
-		nums   []int
-		target int
+		digits []int
 	}
 	tests := []struct {
 		name string
@@ -18,34 +17,31 @@ func Test_twoSum(t *testing.T) {
 		{
 			name: "Example 1",
 			args: args{
-				nums:   []int{2, 7, 11, 15},
-				target: 9,
+				digits: []int{1, 2, 3},
 			},
-			want: []int{0, 1},
+			want: []int{1, 2, 4},
 		},
 		{
 			name: "Example 2",
 			args: args{
-				nums:   []int{3, 2, 4},
-				target: 6,
+				digits: []int{4, 3, 2, 1},
 			},
-			want: []int{1, 2},
+			want: []int{4, 3, 2, 2},
 		},
 		{
 			name: "Example 3",
 			args: args{
-				nums:   []int{3, 3},
-				target: 6,
+				digits: []int{9},
 			},
-			want: []int{0, 1},
+			want: []int{1, 0},
 		},
 	}
 	for _, tt := range tests {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
-			if got := twoSum(tt.args.nums, tt.args.target); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("twoSum() = %v, want %v", got, tt.want)
+			if got := plusOne(tt.args.digits); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("plusOne() = %v, want %v", got, tt.want)
 			}
 		})
 	}
